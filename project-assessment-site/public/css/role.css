@@ -1,0 +1,39 @@
+table.rolesTable {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    border: 1px solid #000000;
+    background-color: #EEEEEE;
+    width: 33%;
+    text-align: center;
+    border-collapse: collapse;
+}
+table.rolesTable td, table.rolesTable th {
+    border: 1px solid #000000;
+    padding: 3px 2px;
+}
+table.rolesTable tbody td {
+    font-size: 13px;
+    color: #000000;
+}
+table.rolesTable tr:nth-child(even) {
+    background: #D0E4F5;
+}
+table.rolesTable thead {
+    background: #0281A4;
+    background: -moz-linear-gradient(top, #41a0bb 0%, #1b8dad 66%, #0281A4 100%);
+    background: -webkit-linear-gradient(top, #41a0bb 0%, #1b8dad 66%, #0281A4 100%);
+    background: linear-gradient(to bottom, #41a0bb 0%, #1b8dad 66%, #0281A4 100%);
+}
+table.rolesTable thead th {
+    font-size: 17px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    border-left: 2px solid #020090;
+}
+table.rolesTable thead th:first-child {
+    border-left: none;
+}
+
+table.rolesTable tfoot td {
+    font-size: 14px;
+}

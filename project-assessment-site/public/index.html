@@ -1,0 +1,75 @@
+<html>
+<head>
+
+    <link rel="stylesheet" href="node_modules/xterm/css/xterm.css" />
+    <script src="node_modules/xterm/lib/xterm.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/person.css">
+    <link rel="stylesheet" type="text/css" href="css/role.css">
+    <link rel="stylesheet" type="text/css" href="css/office.css">
+    <link rel="stylesheet" type="text/css" href="css/department.css">
+    <script src="js/person.js"></script>
+    <script src="js/role.js"></script>
+    <script src="js/office.js"></script>
+    <script src="js/department.js"></script>
+
+    <title>Project Assessment Site</title>
+
+</head>
+<body>
+<h1>Project Assessment WebApp</h1>
+<h3>Red text means that you've got some work to do</h3>
+<h3>Green text means that you've passed that section</h3>
+
+<hr/>
+<p/>
+<p/>
+There should be a table with 3 people here
+<div id="people">
+    <h1 style="color: red">You haven't completed this yet - you need the person service running on port 8081</h1>
+    <div>
+        To pass you must also expose the services on public ports. You must do this using docker-compose to bring up
+        all the services and website together as a single unit. You can all take one service each. The only overlapping
+        file is the docker-compose.yaml, which your team-leader can merge.
+    </div>
+</div>
+<p/>
+<p/>
+<hr/>
+
+<p/>
+<p/>
+There should be a table with 3 roles here
+<div id="roles">
+    <h1 style="color: red">You haven't completed this yet - you need the role service running on port 8082</h1>
+</div>
+<p/>
+<p/>
+<hr/>
+
+<p/>
+<p/>
+There should be a table with 4 departments here
+<div id="departments">
+    <h1 style="color: red">You haven't completed this yet - you need the department service running on port 8083</h1>
+</div>
+<p/>
+<p/>
+<hr/>
+<p/>
+<p/>
+There should be a table with 4 offices here
+<div id="offices">
+    <h1 style="color: red">You haven't completed this yet - you need the office service running on port 8084</h1>
+</div>
+<p/>
+<p/>
+<hr/>
+<div id="terminal"></div>
+<script>
+    var term = new Terminal();
+    term.open(document.getElementById('terminal'));
+    term.write('Hello from \x1B[1;3;31mxterm.js\x1B[0m $ ')
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+table.officesTable {
+    border: 4px solid #792396;
+    background-color: #555555;
+    width: 350px;
+    text-align: center;
+    border-collapse: collapse;
+}
+table.officesTable td, table.officesTable th {
+    border: 3px solid #555555;
+    padding: 5px 2px;
+}
+table.officesTable tbody td {
+    font-size: 13px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+table.officesTable tr:nth-child(even) {
+    background: #CC3BFC;
+}
+table.officesTable thead {
+    background: #792396;
+    border-bottom: 4px solid #792396;
+}
+table.officesTable thead th {
+    font-size: 19px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    border-left: 2px solid #792396;
+}
+table.officesTable thead th:first-child {
+    border-left: none;
+}
+
+table.officesTable tfoot td {
+    font-size: 13px;
+}
+table.officesTable tfoot .links {
+    text-align: right;
+}
+table.officesTable tfoot .links a{
+    display: inline-block;
+    background: #792396;
+    color: #FFFFFF;
+    padding: 2px 8px;
+    border-radius: 5px;
+}

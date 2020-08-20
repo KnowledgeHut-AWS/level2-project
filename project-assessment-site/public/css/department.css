@@ -1,0 +1,40 @@
+table.departmentsTable {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    border: 2px solid #4F7849;
+    background-color: #EEEEEE;
+    width: 25%;
+    text-align: center;
+}
+table.departmentsTable td, table.departmentsTable th {
+    border: 1px solid #4F7849;
+    padding: 3px 2px;
+}
+table.departmentsTable tbody td {
+    font-size: 19px;
+    font-weight: bold;
+    color: #000000;
+}
+table.departmentsTable tr:nth-child(even) {
+    background: #CEE0CC;
+}
+table.departmentsTable thead {
+    background: #4F7849;
+    background: -moz-linear-gradient(top, #7b9a76 0%, #60855b 66%, #4F7849 100%);
+    background: -webkit-linear-gradient(top, #7b9a76 0%, #60855b 66%, #4F7849 100%);
+    background: linear-gradient(to bottom, #7b9a76 0%, #60855b 66%, #4F7849 100%);
+    border-bottom: 1px solid #444444;
+}
+table.departmentsTable thead th {
+    font-size: 15px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    border-left: 2px solid #D0E4F5;
+}
+table.departmentsTable thead th:first-child {
+    border-left: none;
+}
+
+table.departmentsTable tfoot td {
+    font-size: 21px;
+}
