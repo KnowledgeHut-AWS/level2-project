@@ -18,6 +18,11 @@ spec:
     volumeMounts: 
     - mountPath: /var/run/docker.sock
       name: docker-sock
+  - name: kubectl
+    image: wernight/kubectl
+    command:
+    - cat
+    tty: true
   volumes:
   - name: docker-sock
     hostPath:
