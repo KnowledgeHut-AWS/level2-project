@@ -52,5 +52,14 @@ spec:
               }
           }
       }
+      stage("Deploy") {
+          steps {
+              container('kubectl') {
+                  sh '''
+                      kubectl get pods -n jenkins
+                  '''
+              }
+          }
+      }
   }
 }
