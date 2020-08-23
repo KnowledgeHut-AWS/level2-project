@@ -15,6 +15,8 @@ spec:
     command: 
     - bash
     tty: true
+    volumes:
+    - hostPathVolume: /var/run/docker.sock  
 """
     }
   }

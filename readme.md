@@ -54,7 +54,8 @@ Once the builds are successful, the same pipeline can deploy the app to kubernet
 Each of the 5 services needs a separate deployment and service object definition. 
 Your services should expose NodePorts so that they can be accessed from your browser.
 The complexity here is that you need to have known port for each service otherwise you will not be able to access it from the UI.
-Remember, the calls to the separate REST services are made from the browser, not from the UI service.
+Remember, the calls to the separate REST services are made from the browser, not from the UI service. 
+There is no inter-service chatter.
 
 
 
