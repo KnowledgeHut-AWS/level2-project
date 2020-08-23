@@ -1,4 +1,7 @@
 build:
-    docker build --tag department-service .build
-run:
-    docker run -it --rm -p 8082:80 department-service
+	docker build --tag $$DOCKER_NAMESPACE/$$SERVICE_NAME .
+
+release:
+	docker login -p $$CREDS_PSW -u $$CREDS_USR
+	docker push $$DOCKER_NAMESPACE/SERVICE_NAME
+

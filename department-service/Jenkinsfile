@@ -1,0 +1,48 @@
+pipeline {
+  agent {
+    kubernetes {
+      yaml """
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    service_name: department-service
+    service_type: REST
+spec:
+  containers:
+  - name: dnd
+    image: bryandollery/alpine-docker 
+    command: 
+    - bash
+    tty: true
+"""
+    }
+  }
+  environment {
+    CREDS = credentials('bryan_docker_creds')
+    DOCKER_NAMESPACE = 'bryandollery'
+    SERVICE_NAME = 'department-service'
+  }
+  stages {
+      stage("Build") {
+          steps {
+              container('dnd') {
+                  sh '''
+                      cd $SERVICE_NAME
+                      docker build --tag $DOCKER_NAMESPACE/$SERVICE_NAME .
+                  '''
+              }
+          }
+      }
+      stage("Release") {
+          steps {
+              container('dnd') {
+                  sh '''
+                      docker login -p $CREDS_PSW -u $CREDS_USR
+                      docker push $DOCKER_NAMESPACE/$SERVICE_NAME
+                  '''
+              }
+          }
+      }
+  }
+}
