@@ -23,11 +23,18 @@ spec:
     command:
     - cat
     tty: true
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: serviceaccount
   volumes:
   - name: docker-sock
     hostPath:
       path: /var/run/docker.sock  
       type: Socket
+  - name: serviceaccount
+    hostPath:
+      path: /var/run/secrets/kubernetes.io/serviceaccount
+      type: Secret
 """
     }
   }
@@ -61,7 +68,10 @@ spec:
           steps {
               container('kubectl') {
                   sh '''
-                      kubectl get pods -n jenkins
+                      kubectl --token="$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)" \
+                              --certificate-authority=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt \
+                              --namespace jenkins \
+                              get pods
                   '''
               }
           }
