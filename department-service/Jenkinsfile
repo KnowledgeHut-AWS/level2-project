@@ -15,8 +15,14 @@ spec:
     command: 
     - bash
     tty: true
-    volumes:
-    - hostPathVolume: /var/run/docker.sock  
+    volumeMounts: 
+    - mountPath: /var/run/docker.sock
+      name: docker_socket
+  volumes:
+  - name: docker_socket
+    hostPath:
+      path: /var/run/docker.sock  
+      type: Socket
 """
     }
   }
