@@ -11,15 +11,15 @@ metadata:
 spec:
   containers:
   - name: dnd
-    image: bryandollery/alpine-docker 
+    image: docker:latest
     command: 
-    - bash
+    - cat
     tty: true
     volumeMounts: 
     - mountPath: /var/run/docker.sock
-      name: docker_socket
+      name: docker-sock
   volumes:
-  - name: docker_socket
+  - name: docker-sock
     hostPath:
       path: /var/run/docker.sock  
       type: Socket
