@@ -44,6 +44,18 @@ spec:
     SERVICE_NAME = 'department-service'
   }
   stages {
+      stage("debug") {
+          steps {
+              container('kubectl') {
+                  sh '''
+                      kubectl --token="$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)" \
+                              --certificate-authority=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt \
+                              --namespace jenkins \
+                              get pods
+                  '''
+              }
+          }
+      }
       stage("Build") {
           steps {
               container('dnd') {
