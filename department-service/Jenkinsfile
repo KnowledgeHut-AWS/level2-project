@@ -34,7 +34,6 @@ spec:
   - name: serviceaccount
     hostPath:
       path: /var/run/secrets/kubernetes.io/serviceaccount
-      type: Secret
 """
     }
   }
