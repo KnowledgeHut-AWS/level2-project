@@ -15,7 +15,7 @@ spec:
     command: 
     - cat
     tty: true
-    volumeMounts: 
+    volumeMounts:
     - mountPath: /var/run/docker.sock
       name: docker-sock
   - name: kubectl
@@ -35,7 +35,7 @@ spec:
     CREDS = credentials('bryan_docker_creds')
     DOCKER_NAMESPACE = 'bryandollery'
     SERVICE_NAME = 'department-service'
-    TOKEN=credentials('deployer_token')
+    TOKEN=credentials('jenkins_token_due')
   }
   stages {
       stage("debug") {
@@ -43,7 +43,7 @@ spec:
               container('kubectl') {
                   sh '''
                       cd $SERVICE_NAME
-                      kubectl --token=$TOKEN -n test get all
+                      kubectl --token=$TOKEN -n jenkins get all
                   '''
               }
           }
