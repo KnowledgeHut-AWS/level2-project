@@ -38,15 +38,6 @@ spec:
     SA=credentials('f355ebb8-b7cb-4848-8c83-c0d56b88959e')
   }
   stages {
-      stage("debug") {
-          steps {
-              container('kubectl') {
-                  sh '''
-                      kubectl --token=$SA get pods -n jenkins
-                  '''
-              }
-          }
-      }
       stage("Build") {
           steps {
               container('dnd') {
@@ -71,10 +62,7 @@ spec:
           steps {
               container('kubectl') {
                   sh '''
-                      kubectl --token="$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)" \
-                              --certificate-authority=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt \
-                              --namespace jenkins \
-                              get pods
+                      kubectl --token=$SA -n test apply -f deploy.yaml -f service.yaml
                   '''
               }
           }
