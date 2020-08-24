@@ -32,7 +32,7 @@ spec:
     }
   }
   environment {
-    CREDS = credentials('Rawan-deocker')
+    CREDS = credentials('rawan005-docker')
     DOCKER_NAMESPACE = 'rawan005'
     SERVICE_NAME = 'department-service'
     TOKEN=credentials('ff3e1662-fd6d-414b-8fca-c4fdfb722371')
