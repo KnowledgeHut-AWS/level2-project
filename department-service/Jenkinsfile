@@ -42,7 +42,7 @@ spec:
           steps {
               container('kubectl') {
                   sh '''
-                      kubectl --token=$SA get pods -n kenkins
+                      kubectl --token=$SA get pods -n jenkins
                   '''
               }
           }
