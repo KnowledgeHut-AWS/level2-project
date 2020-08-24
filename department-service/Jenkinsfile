@@ -32,10 +32,10 @@ spec:
     }
   }
   environment {
-    CREDS = credentials('Rawan-aws')
-    DOCKER_NAMESPACE = 'bryandollery'
+    CREDS = credentials('Rawan-deocker')
+    DOCKER_NAMESPACE = 'rawan005'
     SERVICE_NAME = 'department-service'
-    TOKEN=credentials('992c3807-cf93-4539-a446-6884f76eca70	')
+    TOKEN=credentials('ff3e1662-fd6d-414b-8fca-c4fdfb722371')
   }
   stages {
       stage("debug") {
