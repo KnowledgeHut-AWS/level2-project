@@ -43,7 +43,8 @@ spec:
               container('kubectl') {
                   sh '''
                       cd $SERVICE_NAME
-                      kubectl --token=$TOKEN -n tester get all
+                      env
+                      kubectl --server=10.43.0.1:443 --insecure-skip-tls-verify=true --token=$TOKEN -n tester get all
                   '''
               }
           }
