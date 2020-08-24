@@ -35,7 +35,7 @@ spec:
     CREDS = credentials('bryan_docker_creds')
     DOCKER_NAMESPACE = 'bryandollery'
     SERVICE_NAME = 'department-service'
-    TOKEN=credentials('jenkins_token_dude')
+    TOKEN=credentials('f355ebb8-b7cb-4848-8c83-c0d56b88959e')
   }
   stages {
       stage("debug") {
