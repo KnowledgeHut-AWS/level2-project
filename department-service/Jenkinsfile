@@ -32,10 +32,10 @@ spec:
     }
   }
   environment {
-    CREDS = credentials('bryan_docker_creds')
+    CREDS = credentials('Rawan-aws')
     DOCKER_NAMESPACE = 'bryandollery'
     SERVICE_NAME = 'department-service'
-    TOKEN=credentials('tester_token')
+    TOKEN=credentials('992c3807-cf93-4539-a446-6884f76eca70	')
   }
   stages {
       stage("debug") {
