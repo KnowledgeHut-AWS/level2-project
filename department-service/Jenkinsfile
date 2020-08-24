@@ -44,7 +44,7 @@ spec:
                   sh '''
                       cd $SERVICE_NAME
                       env
-                      kubectl --server="https://kubernetes" --insecure-skip-tls-verify=true --token=$TOKEN -n tester get all
+                      kubectl --server="https://kubernetes.default" --insecure-skip-tls-verify=true --token=$TOKEN -n tester get all
                   '''
               }
           }
