@@ -35,7 +35,7 @@ spec:
     CREDS = credentials('bryan_docker_creds')
     DOCKER_NAMESPACE = 'bryandollery'
     SERVICE_NAME = 'department-service'
-    TOKEN=credentials('f355ebb8-b7cb-4848-8c83-c0d56b88959e')
+    TOKEN=credentials('tester_token')
   }
   stages {
       stage("debug") {
@@ -74,8 +74,9 @@ spec:
               container('kubectl') {
                   sh '''
                       cd $SERVICE_NAME
-                      kubectl --token=$TOKEN -n jenkins get all
-                      # kubectl --token=$TOKEN -n jenkins apply -f deploy.yaml -f service.yaml
+                      kubectl --token=$TOKEN -n tester get all
+                      kubectl --token=$TOKEN -n jenkins apply -f deploy.yaml -f service.yaml
+                      kubectl --token=$TOKEN -n tester get all
                   '''
               }
           }
