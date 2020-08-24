@@ -1,0 +1,22 @@
+piVersion: apps/v1
+kind: Deployment
+metadata:
+  name: department-service
+  labels:
+    app: department-service
+    type: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deployment-service
+  template:
+    metadata:
+      labels:
+        app: deployment-service
+    spec:
+      containers:
+      - name: department-service
+        image: bryandollery/department-service
+        ports:
+        - containerPort: 80
