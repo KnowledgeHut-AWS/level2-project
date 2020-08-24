@@ -23,17 +23,11 @@ spec:
     command:
     - cat
     tty: true
-    volumeMounts:
-    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-      name: serviceaccount
   volumes:
   - name: docker-sock
     hostPath:
       path: /var/run/docker.sock  
       type: Socket
-  - name: serviceaccount
-    hostPath:
-      path: /var/run/secrets/kubernetes.io/serviceaccount
 """
     }
   }
@@ -46,12 +40,9 @@ spec:
   stages {
       stage("debug") {
           steps {
-              container('dnd') {
+              container('kubectl') {
                   sh '''
-                      env
-                      echo $SA
-                      # cat /var/run/secrets/kubernetes.io/serviceaccount/token
-                      # cat /var/run/secrets/kubernetes.io/serviceaccount/ca.crt 
+                      kubectl --token=$SA get pods -n kenkins
                   '''
               }
           }
