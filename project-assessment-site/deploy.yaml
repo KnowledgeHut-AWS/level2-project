@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project-assessment-site
+  labels:
+    app: project-assessment-site
+    type: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: project-assessment-site
+  template:
+    metadata:
+      labels:
+        app: project-assessment-site
+    spec:
+      containers:
+      - name: project-assessment-site
+        image: rawan005/project-assessment-site
+        ports:
+        - containerPort: 80
