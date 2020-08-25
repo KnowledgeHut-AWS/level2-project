@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: department-service
-        image: rawan/department-service
+        image: rawan005/department-service
         ports:
         - containerPort: 80
