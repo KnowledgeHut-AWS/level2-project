@@ -1,0 +1,24 @@
+ 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: person-service
+  labels:
+    app: person-service
+    type: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: person-service
+  template:
+    metadata:
+      labels:
+        app: person-service
+    spec:
+      containers:
+      - name: person-service
+        image: rawan005/person-service
+        ports:
+        - containerPort: 80
+

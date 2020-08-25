@@ -1,0 +1,72 @@
+pipeline {
+  agent {
+    kubernetes {
+      yaml """
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    service_name: office-service
+    service_type: REST
+spec:
+  containers:
+  - name: dnd
+    image: docker:latest
+    command: 
+    - cat
+    tty: true
+    volumeMounts:
+    - mountPath: /var/run/docker.sock
+      name: docker-sock
+  - name: kubectl
+    image: bryandollery/terraform-packer-aws-alpine
+    command:
+    - cat
+    tty: true
+  volumes:
+  - name: docker-sock
+    hostPath:
+      path: /var/run/docker.sock  
+      type: Socket
+"""
+    }
+  }
+  environment {
+    CREDS = credentials('Rawan-docker')
+    DOCKER_NAMESPACE = 'rawan005'
+    SERVICE_NAME = 'person-service'
+    TOKEN=credentials('49858e69-07e1-49d0-8f2f-43942933478a')
+  }
+  stages {
+      stage("Build") {
+          steps {
+              container('dnd') {
+                  sh '''
+                      cd $SERVICE_NAME
+                      docker build --tag $DOCKER_NAMESPACE/$SERVICE_NAME .
+                  '''
+              }
+          }
+      }
+      stage("Release") {
+          steps {
+              container('dnd') {
+                  sh '''
+                      docker login -p $CREDS_PSW -u $CREDS_USR
+                      docker push $DOCKER_NAMESPACE/$SERVICE_NAME
+                  '''
+              }
+          }
+      }
+      stage("Deploy") {
+          steps {
+              container('kubectl') {
+                  sh '''
+                      cd $SERVICE_NAME
+                      kubectl --token=$TOKEN -n test apply -f deploy.yaml -f service.yaml
+                  '''
+              }
+          }
+      }
+  }
+}
