@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: office-service
+  labels:
+    app: office-service
+    type: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: office-service
+  template:
+    metadata:
+      labels:
+        app: office-service
+    spec:
+      containers:
+      - name: office-service
+        image: rawan/office-service:1
+        ports:
+        - containerPort: 80
