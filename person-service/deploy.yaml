@@ -1,22 +1,24 @@
+ 
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: office-service
+  name: person-service
   labels:
-    app: office-service
+    app: person-service
     type: api
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: office-service
+      app: person-service
   template:
     metadata:
       labels:
-        app: office-service
+        app: person-service
     spec:
       containers:
-      - name: office-service
-        image: rawan005/office-service
+      - name: person-service
+        image: rawan005/person-service
         ports:
         - containerPort: 80
+

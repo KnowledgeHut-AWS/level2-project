@@ -6,7 +6,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-    service_name: department-service
+    service_name: office-service
     service_type: REST
 spec:
   containers:
@@ -15,7 +15,7 @@ spec:
     command: 
     - cat
     tty: true
-    volumeMounts: 
+    volumeMounts:
     - mountPath: /var/run/docker.sock
       name: docker-sock
   - name: kubectl
@@ -34,7 +34,7 @@ spec:
   environment {
     CREDS = credentials('Rawan-docker')
     DOCKER_NAMESPACE = 'rawan005'
-    SERVICE_NAME = 'department-service'
+    SERVICE_NAME = 'person-service'
     TOKEN=credentials('49858e69-07e1-49d0-8f2f-43942933478a')
   }
   stages {
