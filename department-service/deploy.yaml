@@ -9,14 +9,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: deployment-service
+      app: department-service
   template:
     metadata:
       labels:
-        app: deployment-service
+        app: department-service
     spec:
       containers:
       - name: department-service
-        image: rawan/department-service
+        image: rawan005/department-service
         ports:
         - containerPort: 80
