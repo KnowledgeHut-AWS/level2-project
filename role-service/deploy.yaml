@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: role-service
-        image: rawan005/person-service
+        image: rawan005/role-service
         ports:
         - containerPort: 80
