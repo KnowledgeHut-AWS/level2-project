@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: department-service
-        image: bryandollery/department-service
+        image: rawan/department-service
         ports:
         - containerPort: 80
