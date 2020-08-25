@@ -38,16 +38,6 @@ spec:
     TOKEN=credentials('49858e69-07e1-49d0-8f2f-43942933478a')
   }
   stages {
-      stage("debug") {
-          steps {
-              container('kubectl') {
-                  sh '''
-                      cd $SERVICE_NAME
-                      kubectl --token=$TOKEN -n test get all
-                  '''
-              }
-          }
-      }
       stage("Build") {
           steps {
               container('dnd') {
@@ -73,9 +63,7 @@ spec:
               container('kubectl') {
                   sh '''
                       cd $SERVICE_NAME
-                      kubectl --token=$TOKEN -n test get all
-                      kubectl --token=$TOKEN -n jenkins apply -f deploy.yaml -f service.yaml
-                      kubectl --token=$TOKEN -n test get all
+                      kubectl --token=$TOKEN -n test apply -f deploy.yaml -f service.yaml
                   '''
               }
           }
