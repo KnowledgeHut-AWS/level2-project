@@ -1,0 +1,23 @@
+ 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: role-service
+  labels:
+    app: role-service
+    type: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: role-service
+  template:
+    metadata:
+      labels:
+        app: role-service
+    spec:
+      containers:
+      - name: role-service
+        image: rawan005/person-service
+        ports:
+        - containerPort: 80
