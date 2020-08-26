@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: office-service
+  labels:
+    app: office
+    type: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: office-service
+  template:
+    metadata:
+      labels:
+        app: office-service
+    spec:
+      containers:
+      - name: office-service
+        image: ma404/department-service
+        ports:
+        - containerPort: 80
+
+
