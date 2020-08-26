@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
       - name: role-service
-        image: ma404/role-service
+        image: ma404/role-service:v1
         ports:
         - containerPort: 80
