@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
       - name: department-service
-        image: ma404/department-service
+        image: ma404/department-service:v1
         ports:
         - containerPort: 80
