@@ -35,7 +35,7 @@ spec:
     CREDS = credentials('maha_docker_creds')
     DOCKER_NAMESPACE = 'ma404'
     SERVICE_NAME = 'department-service'
-    TOKEN=credentials('23565305-b1b0-4209-8197-287c361e37e6')
+    TOKEN=credentials('15f972ee-42d0-4a95-b75e-8897c18be11b')
   }
   stages {
       stage("Build") {
