@@ -3,8 +3,8 @@ from bryandollery/maven-repo as build
 
 arg rebuild
 
-run git clone https://github.com/BYAT/level1-project.git && \
-/bin/bash: q: command not found
+run git clone https://github.com/M404h/level2-project.git && \
+    cd /root/level2-project/role-service && \
     mvn clean package -DskipTests
 
 from adoptopenjdk/openjdk11:alpine
