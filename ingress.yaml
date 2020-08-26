@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: webapp
+  namespace: test
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /office
+        backend:
+          serviceName: office
+          servicePort: 80
+      - path: /
+        backend:
+          serviceName: webapp
+          servicePort: 80
+      - path: /role
+        backend:
+          serviceName: role
+          servicePort: 80
+      - path: /department
+        backend:
+          serviceName: department
+          servicePort: 80
+      - path: /person
+        backend:
+          serviceName: person
+          servicePort: 80

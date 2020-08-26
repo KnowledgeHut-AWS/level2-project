@@ -21,7 +21,7 @@ function displayRoles(roles) {
     }
 }
 
-const rolesUrl = "http://" + window.location.hostname + ":8082/role/"
+const rolesUrl = "http://" + window.location.hostname + "/role/"
 fetch(rolesUrl)
     .then(response => response.json())
     .then(data => displayRoles(data));

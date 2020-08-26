@@ -23,7 +23,7 @@ function displayOffices(offices) {
     }
 }
 
-const officesUrl = "http://" + window.location.hostname + ":8084/office/"
+const officesUrl = "http://" + window.location.hostname + "/office/"
 fetch(officesUrl)
     .then(response => response.json())
     .then(data => displayOffices(data));

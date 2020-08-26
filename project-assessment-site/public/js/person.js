@@ -26,7 +26,7 @@ function displayPeople(people) {
             "<h1 style='color: green'>Passed people test</h1>";
     }
 }
-const personUrl = "http://" + window.location.hostname + ":8081/person/"
+const personUrl = "http://" + window.location.hostname + "/person/"
 fetch(personUrl)
     .then(response => response.json())
     .then(data => displayPeople(data));
