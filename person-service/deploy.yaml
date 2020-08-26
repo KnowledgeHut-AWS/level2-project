@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
       - name: person-service
-        image: ma404/department-service
+        image: ma404/person-service:v1
         ports:
         - containerPort: 80
