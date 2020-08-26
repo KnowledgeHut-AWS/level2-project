@@ -17,6 +17,6 @@ app: department-service
 spec:
 containers:
 - name: department-service
-image: maha/department-service
+image: ma404/department-service
 ports:
 - containerPort: 80
