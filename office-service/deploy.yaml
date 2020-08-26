@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: office-service
-        image: ma404/department-service
+        image: ma404/department-service:v1
         ports:
         - containerPort: 80
 
