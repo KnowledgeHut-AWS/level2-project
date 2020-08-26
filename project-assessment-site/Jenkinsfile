@@ -6,7 +6,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-    service_name: department-service
+    service_name: project-assessment-site
     service_type: REST
 spec:
   containers:
