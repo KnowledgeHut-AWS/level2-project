@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: department-service
   labels:
-    app: department-service
+    app: department
     type: api
 spec:
   replicas: 1
@@ -14,9 +14,9 @@ spec:
     metadata:
       labels:
         app: department-service
-spec:
-  containers:
-  - name: department-service
-  image: ma404/department-service
-ports:
-  - containerPort: 80
+    spec:
+      containers:
+      - name: department-service
+        image: ma404/department-service
+        ports:
+        - containerPort: 80
