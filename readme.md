@@ -29,6 +29,14 @@ You must fully automate the building and deployment of this application's compon
 ### AWS (packer + terraform)
 The entire project will be delivered on an AWS infrastructure built using packer and terraform. 
 The packer build must be automated using jenkins, though it is enough for this project to run terraform locally on your laptop, allowing you to have a single environment that can be easily torn down and recreated when needed.
+You're doing the packer job simply to show that you can automate infrastructure -- you don't have to use it in your deployments.
+
+### Bootstrap Environment
+Extra points: 20
+Manually deploy the sandbox terraform scripts, start k3d, install packer with an ingress controller.
+Use jobs there to deploy the multi-node k3s architecture (k3s) and deploy jenkins within it, along with some jobs (link in the references below) which are responsible for creating your platform (namespaces, elf, pro-graf, ingress) and your microservice application.
+Note: you'll have to use a separate terraform workspace for this, otherwise terraform will tear down your sandbox when you try to deploy your cluster.
+
 
 #### Points
 Packer: 10  
@@ -94,10 +102,18 @@ Note: Remember, the calls to the separate REST services are made from the browse
 There is no inter-service chatter.
 
 #### Points
-Separate jenkins jobs: 10  
+6 Separate jenkins jobs: 10  
 Githooks: 5  
 Build and push to docker hub: 10  
 Deploy to k8s as a service with ingress: 10  
+Taint server so that microservices and jenkins only deploy to agents: 10  
+Tolerate that taint on elf and pro-graf: 10   
+
+
+## Expectations
+Jenkins Jobs: 6 (5 for application microservices and 1 for packer)
+Manual build of packer and terraform and manual installation of jenkins
+Everything else deployed through Jenkinsfiles
 
 ## Teams
 * *Alpha*: Amjaad + Nawaf + **Sarah**
