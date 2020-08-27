@@ -124,9 +124,9 @@ Everything else deployed through Jenkinsfiles
 * *Tau*: Salah + **Rawan** + Reem
 * *Omega*: **Fatima** + Faisal + Raghad Alk
 * *Rho*: **Amal Alr** + Alanouf + Awraad
-* *Sigma*: **Raghad Alq** + Muna + Nuha
-* *Epsilon*: Fouz + Renad + **Amerah**
-* *Theta*: Amal Alo + **Maha** + Walaa
+* *Epsilon*: Fouz + Renad + **Amerah** + Nuha
+* *Theta*: Amal Alo + **Maha** + Walaa + Raghad Alq
+
 
 ## Schedule
 Thursday 27th August - Project Release
