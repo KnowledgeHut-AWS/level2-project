@@ -112,4 +112,6 @@ Deploy to k8s as a service with ingress: 10
 * *Epsilon*: Fouz + Renad + Amerah
 * *Theta*: Amal Alo + Maha + Walaa
 
-
+## Schedule
+Thursday 27th August - Project Release
+Wednesday 2nd September - Presentations and Reports
