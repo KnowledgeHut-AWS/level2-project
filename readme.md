@@ -59,7 +59,7 @@ Extra points will be given if extra (useful) platform services are configured an
 
 #### Points
 K3D: 10  
-K3S: 15  
+K3S: 20  
 Jenkins: 10  
 ELK: 10  
 Pro-Graf: 10  
