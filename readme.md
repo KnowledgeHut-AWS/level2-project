@@ -31,9 +31,9 @@ The entire project will be delivered on an AWS infrastructure built using packer
 The packer build must be automated using jenkins, though it is enough for this project to run terraform locally on your laptop, allowing you to have a single environment that can be easily torn down and recreated when needed.
 
 #### Points
-Packer: 10
-Terraform: 10
-Automation (Jenkins): 10
+Packer: 10  
+Terraform: 10  
+Automation (Jenkins): 10  
 
 ## Platform
 
@@ -58,11 +58,11 @@ You will gain extra points for having monioring configured via prometheus, and c
 Extra points will be given if extra (useful) platform services are configured and used (e.g. Hashicorp Vault -- note, I don't expect you to teach yourself vault in a couple of days, so it's not a realistic example)
 
 #### Points
-K3D: 10
-K3S: 10
-Jenkins: 10
-ELK: 10
-Pro-Graf: 10
+K3D: 10  
+K3S: 10  
+Jenkins: 10  
+ELK: 10  
+Pro-Graf: 10  
 Extra: 10 (each)
 
 Full marks will be given to those teams who bring up k8s and jenkins, then use jenkins to install the rest of the platform.
@@ -76,20 +76,28 @@ You can register the token as a credential in jenkins and read it in the usual w
 
 Extra points will be awarded if you do something similar with a kubernetes secret.
 
-
+#### Points
+Automated deployment to docker hub: 10  
+Credentials in jenkins: 5  
+Credentials in k8 secrets: 10  
 
 ## Application Architecture
 You have to build 5 docker containers and release them to docker hub. 
 This must be done in a jenkins job. 
 You can run the build jobs in parallel. 
-To do that, create an extra 'orchestration' pipeline that runs stages in parallel, and have the stages invoke the individual build jobs. 
-Once the builds are successful, the same pipeline can deploy the app to kubernetes.
+Your jobs can build and deploy the application services to k8s.
 
 Each of the 5 services needs a separate deployment and service object definition. 
 Your services should be exposed via ingress so that they can be accessed from your browser.
 
 Note: Remember, the calls to the separate REST services are made from the browser, not from the UI service. 
 There is no inter-service chatter.
+
+#### Points
+Separate jenkins jobs: 10  
+Githooks: 5  
+Build and push to docker hub: 10  
+Deploy to k8s as a service with ingress: 10  
 
 ## Teams
 * *Alpha*: Amjaad + Nawaf + Sarah
