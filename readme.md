@@ -39,7 +39,7 @@ Automation (Jenkins): 10
 
 ### Kubernetes
 You will run up a kubernetes instance. 
-You can either use the sandbox, or for an extra point run it on 3 physical nodes -- 1 for the server (master) and 2 phyical agents (ec2 instances).
+You can either use the sandbox (K3D), or for an extra points run it on 3 physical nodes (ec2 instances) -- 1 for the server (master) and 2 phyical agents (ec2 instances) using K3S.
 
 All services run on kubernetes should be exposed using an ingress controller, though elk and pro-graf are fine with node-ports given the complexity of the underlying applications.
 
@@ -59,7 +59,7 @@ Extra points will be given if extra (useful) platform services are configured an
 
 #### Points
 K3D: 10  
-K3S: 10  
+K3S: 15  
 Jenkins: 10  
 ELK: 10  
 Pro-Graf: 10  
