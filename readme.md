@@ -108,7 +108,7 @@ Deploy to k8s as a service with ingress: 10
 * *Tau*: Salah + **Rawan** + Reem
 * *Omega*: **Fatima** + Faisal + Raghad Alk
 * *Rho*: **Amal Alr** + Alanouf + Awraad
-* *Sigma*: Raghad Alq + **Muna** + Nuha
+* *Sigma*: **Raghad Alq** + Muna + Nuha
 * *Epsilon*: Fouz + Renad + **Amerah**
 * *Theta*: Amal Alo + **Maha** + Walaa
 
