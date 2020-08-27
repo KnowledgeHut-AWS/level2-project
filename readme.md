@@ -114,9 +114,15 @@ Deploy to k8s as a service with ingress: 10
 
 ## Schedule
 Thursday 27th August - Project Release
+Tuesday 1st September -- I'll stop tearing down the estates at night
 Wednesday 2nd September - Presentations and Reports
 
 ## Outputs
 1. Working application
 2. Live presentation
 3. PDF containing slides + github link + docker hub link
+
+
+## References
+Jenkins: https://github.com/helm/charts/tree/master/stable/jenkins#providing-jobs-xml
+
