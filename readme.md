@@ -115,3 +115,8 @@ Deploy to k8s as a service with ingress: 10
 ## Schedule
 Thursday 27th August - Project Release
 Wednesday 2nd September - Presentations and Reports
+
+## Outputs
+1. Working application
+2. Live presentation
+3. PDF containing slides + github link + docker hub link
