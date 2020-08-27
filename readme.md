@@ -100,17 +100,17 @@ Build and push to docker hub: 10
 Deploy to k8s as a service with ingress: 10  
 
 ## Teams
-* *Alpha*: Amjaad + Nawaf + Sarah
-* *Beta*: Hatim + Aljohara + Rahaf
-* *Gamma*: Reab + Abdul + Yaser
-* *Delta*: Bandar + Danya + Bashayr
-* *Phi*: Omar + Rayanah + Manar
-* *Tau*: Salah + Rawan + Reem
-* *Omega*: Fatima + Faisal + Raghad Alk
-* *Rho*: Amal Alr + Alanouf + Awraad
-* *Sigma*: Raghad Alq + Muna + Nuha
-* *Epsilon*: Fouz + Renad + Amerah
-* *Theta*: Amal Alo + Maha + Walaa
+* *Alpha*: Amjaad + Nawaf + **Sarah**
+* *Beta*: **Hatim** + Aljohara + Rahaf
+* *Gamma*: **Reab** + Abdul + Yaser
+* *Delta*: Bandar + **Danya** + Bashayr
+* *Phi*: **Omar** + Rayanah + Manar
+* *Tau*: Salah + **Rawan** + Reem
+* *Omega*: **Fatima** + Faisal + Raghad Alk
+* *Rho*: **Amal Alr** + Alanouf + Awraad
+* *Sigma*: Raghad Alq + *Muna* + Nuha
+* *Epsilon*: Fouz + Renad + *Amerah*
+* *Theta*: Amal Alo + *Maha* + Walaa
 
 ## Schedule
 Thursday 27th August - Project Release
