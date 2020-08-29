@@ -1,9 +1,15 @@
-FROM maven:3.6.3-adoptopenjdk-11
+from bryandollery/maven-repo as build
 
-COPY . .
+arg rebuild
 
-RUN mvn clean package
+run git clone https://github.com/M404h/level2-project.git && \
+    cd /root/level2-project/role-service && \
+    mvn clean package -DskipTests
 
-CMD ["java", "-jar", "target/person-service-1.0.0.jar"]
+from adoptopenjdk/openjdk11:alpine
 
-EXPOSE 80
+copy --from=build /root/level2-project/role-service/target/role-service-1.0.0.jar /
+
+cmd ["java","-jar", "role-service-1.0.0.jar"]
+
+expose 80
