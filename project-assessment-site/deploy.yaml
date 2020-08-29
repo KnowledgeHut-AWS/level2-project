@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: project-assessment-site
-        image: ma404/project-assessment-site:v1
+        image: ma404/project-assessment-site
         ports:
         - containerPort: 80
