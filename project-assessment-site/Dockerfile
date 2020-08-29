@@ -1,14 +1,15 @@
-FROM node:lts-alpine3.10
+FROM node
 
-RUN apk add docker docker-compose make bash git  
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
 
-WORKDIR /project-assessment-site 
-COPY package.json /project-assessment-site
-RUN npm install 
-COPY . /project-assessment-site
+RUN npm install
 
-ENTRYPOINT ["node"]
-
-CMD ["index.js"]
+# bundle app source
+COPY . .
 
 EXPOSE 80
+
+CMD ["node","index.js"]
