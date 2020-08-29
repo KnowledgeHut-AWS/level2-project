@@ -43,7 +43,7 @@ spec:
               container('dnd') {
                   sh '''
                       cd $SERVICE_NAME
-                      docker build --tag $DOCKER_NAMESPACE/$SERVICE_NAME:v1 .
+                      docker build --tag $DOCKER_NAMESPACE/$SERVICE_NAME .
                   '''
               }
           }
@@ -53,7 +53,7 @@ spec:
               container('dnd') {
                   sh '''
                       docker login -p $CREDS_PSW -u $CREDS_USR
-                      docker push $DOCKER_NAMESPACE/$SERVICE_NAME:v1
+                      docker push $DOCKER_NAMESPACE/$SERVICE_NAME
                   '''
               }
           }
