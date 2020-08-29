@@ -1,16 +1,9 @@
+FROM maven:3.6.3-adoptopenjdk-11
 
-from bryandollery/maven-repo as build
+COPY . .
 
-arg rebuild
+RUN mvn clean package
 
-run git clone https://github.com/M404h/level2-project.git && \
-    cd /root/level2-project/person-service && \
-    mvn clean package -DskipTests
+CMD ["java", "-jar", "target/person-service-1.0.0.jar"]
 
-from adoptopenjdk/openjdk11:alpine
-
-copy --from=build /root/level2-project/person-service/target/person-service-1.0.0.jar /
-
-cmd ["java","-jar", "person-service-1.0.0.jar"]
-
-expose 80
+EXPOSE 80
