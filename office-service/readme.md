@@ -2,8 +2,7 @@
 
 Designed to run in a node:lts-alpine3.10 container
 
-Exposes an http service endpoint on port 80 with the /office/ context path
-
+Exposes an http service endpoint on port 80 with the /office/ context pat
 eg:
 
 http://{host}/office/
