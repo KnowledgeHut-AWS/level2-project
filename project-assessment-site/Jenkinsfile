@@ -18,6 +18,17 @@ spec:
     volumeMounts:
     - mountPath: /var/run/docker.sock
       name: docker-sock
+    env:
+        - name: DOCKER_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: username
+        - name: DOCKER_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: password
   - name: kubectl
     image: bryandollery/terraform-packer-aws-alpine
     command:
@@ -32,7 +43,6 @@ spec:
     }
   }
   environment {
-    CREDS = credentials('maha_docker_creds')
     DOCKER_NAMESPACE = 'ma404'
     SERVICE_NAME = 'project-assessment-site'
     TOKEN=credentials('aaa56c9d-0604-484c-b5ca-ed1b5ce3288c')
@@ -52,7 +62,7 @@ spec:
           steps {
               container('dnd') {
                   sh '''
-                      docker login -p $CREDS_PSW -u $CREDS_USR
+                      docker login -p $DOCKER_PASSWORD -u $DOCKER_USERNAME
                       docker push $DOCKER_NAMESPACE/$SERVICE_NAME
                   '''
               }
@@ -63,7 +73,7 @@ spec:
               container('kubectl') {
                   sh '''
                       cd $SERVICE_NAME
-                      kubectl --token=$TOKEN -n test apply -f deploy.yaml -f service.yaml
+                      kubectl --token=$TOKEN -n test apply -f deploy.yaml -f service.yaml -f ../ingress.yaml
                   '''
               }
           }

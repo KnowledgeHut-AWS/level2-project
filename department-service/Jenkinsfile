@@ -18,6 +18,18 @@ spec:
     volumeMounts:
     - mountPath: /var/run/docker.sock
       name: docker-sock
+    env:
+        - name: DOCKER_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: username
+        - name: DOCKER_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: password
+
   - name: kubectl
     image: bryandollery/terraform-packer-aws-alpine
     command:
@@ -32,7 +44,6 @@ spec:
     }
   }
   environment {
-    CREDS = credentials('maha_docker_creds')
     DOCKER_NAMESPACE = 'ma404'
     SERVICE_NAME = 'department-service'
     TOKEN=credentials('8e9a75db-e60d-40d9-8f5f-997daf860b91')
@@ -52,7 +63,7 @@ spec:
           steps {
               container('dnd') {
                   sh '''
-                      docker login -p $CREDS_PSW -u $CREDS_USR
+                      docker login -p $DOCKER_PASSWORD -u $DOCKER_USERNAME
                       docker push $DOCKER_NAMESPACE/$SERVICE_NAME
                   '''
               }
