@@ -129,7 +129,7 @@ Github Repos: 1 for application, 1 for packer, 1 for elf, 1 for pro-graf
 * *Phi*: **Omar** + Rayanah + Manar
 * *Tau*: Salah + **Rawan** + Reem
 * *Omega*: **Fatima** + Faisal + Raghad Alk
-* *Rho*: **Amal Alr** + Alanhouf + Awraad
+* *Rho*: **Amal Alr** + Alhanouf + Awraad
 * *Epsilon*: Fouz + Renad + **Amerah** + Nuha
 * *Theta*: Amal Alo + **Maha** + Walaa + Raghad Alq
 
@@ -137,7 +137,7 @@ Github Repos: 1 for application, 1 for packer, 1 for elf, 1 for pro-graf
 ## Schedule
 Thursday 27th August - Project Release  
 Tuesday 1st September -- I'll stop tearing down the estates at night  
-Wednesday 2nd September - Presentations and Reports  
+Wednesday 2nd September - Presentations and Reports
 
 ## Outputs
 1. Working application
